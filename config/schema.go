@@ -107,6 +107,7 @@ var schemaDataV1 = `{
         "memswap_limit": {"type": ["number", "string"]},
         "mem_swappiness": {"type": "integer"},
         "metadata": {"type": "object"},
+        "milli_cpu_reservation": {"type": ["number", "string"]},
         "net": {"type": "string"},
         "network_driver": {"type": "object"},
         "oom_kill_disable": {"type": "boolean"},
@@ -360,6 +361,7 @@ var servicesSchemaDataV2 = `{
         "memswap_limit": {"type": ["number", "string"]},
         "mem_swappiness": {"type": "integer"},
         "metadata": {"type": "object"},
+        "milli_cpu_reservation": {"type": ["number", "string"]},
         "network_driver": {"type": "object"},
         "network_mode": {"type": "string"},
 

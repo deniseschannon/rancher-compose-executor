@@ -179,6 +179,17 @@ func TestMemReservation(t *testing.T) {
 	assert.Equal(t, int64(100000), hostCfg.MemoryReservation)
 }
 
+func TestMilliCPUReservation(t *testing.T) {
+	ctx := project.Context{}
+	sc := &config.ServiceConfig{
+		MilliCPUReservation: 10,
+	}
+	_, hostCfg, err := Convert(sc, ctx)
+	assert.Nil(t, err)
+
+	assert.Equal(t, int64(10), hostCfg.MilliCPUReservation)
+}
+
 func TestOomScoreAdj(t *testing.T) {
 	ctx := project.Context{}
 	sc := &config.ServiceConfig{

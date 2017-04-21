@@ -11,7 +11,6 @@ import (
 	"github.com/docker/docker/api/types/strslice"
 	"github.com/docker/docker/runconfig/opts"
 	"github.com/docker/go-connections/nat"
-	"github.com/docker/go-units"
 	"github.com/docker/libcompose/utils"
 	"github.com/docker/libcompose/yaml"
 	"github.com/rancher/rancher-compose-executor/config"
@@ -234,6 +233,7 @@ func Convert(c *config.ServiceConfig, ctx project.Context) (*container.Config, *
 		MemoryReservation:    int64(c.MemReservation),
 		MemorySwap:           int64(c.MemSwapLimit),
 		MemorySwappiness:     &memorySwappiness,
+		MilliCPUReservation:  int64(c.MilliCPUReservation),
 		CPUPeriod:            int64(c.CPUPeriod),
 		CPUShares:            int64(c.CPUShares),
 		CPUQuota:             int64(c.CPUQuota),
